@@ -30,6 +30,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             CelciusToFahrenheitTheme {
+                Screen()
 
             }
         }
@@ -67,7 +68,7 @@ fun FahrenheitSlider(sliderPosition: Float, onPositionChange: (Float) -> Unit) {
 }
 
 @Composable
-fun DemoScreen() {
+fun Screen() {
     var sliderPosition by remember { mutableStateOf(20f) }
 
     var FsliderPosition by remember { mutableStateOf((sliderPosition * 9/5) + 32) }
@@ -133,6 +134,6 @@ fun DemoScreen() {
 @Composable
 fun GreetingPreview() {
     CelciusToFahrenheitTheme {
-        DemoScreen()
+        Screen()
     }
 }
